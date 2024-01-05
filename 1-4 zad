@@ -1,0 +1,101 @@
+
+
+public class Zadatak1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Unesite prvi cijeli broj:");
+        int broj1 = scanner.nextInt();
+
+        System.out.println("Unesite drugi cijeli broj:");
+        int broj2 = scanner.nextInt();
+
+        int zbroj = broj1 + broj2;
+        double aritmetickaSredina = (broj1 + broj2) / 2.0;
+        int zbrojKvadrata = broj1 * broj1 + broj2 * broj2;
+
+        System.out.println("Zbroj: " + zbroj);
+        System.out.println("Aritmetička sredina: " + aritmetickaSredina);
+        System.out.println("Zbroj kvadrata: " + zbrojKvadrata);
+
+        scanner.close();
+    }
+}
+
+
+
+public class Zadatak2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Unesite 10 brojeva:");
+        int[] brojevi = new int[10];
+
+        for (int i = 0; i < 10; i++) {
+            brojevi[i] = scanner.nextInt();
+        }
+
+        int najmanji = brojevi[0];
+        int najveci = brojevi[0];
+
+        for (int i = 1; i < 10; i++) {
+            if (brojevi[i] < najmanji) {
+                najmanji = brojevi[i];
+            }
+            if (brojevi[i] > najveci) {
+                najveci = brojevi[i];
+            }
+        }
+
+        System.out.println("Najmanji broj: " + najmanji);
+        System.out.println("Najveći broj: " + najveci);
+
+        scanner.close();
+    }
+}
+
+
+
+
+public class Zadatak3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Unesite 5 brojeva:");
+        int zbrojDvoznamenkastih = 0;
+
+        for (int i = 0; i < 5; i++) {
+            int broj = scanner.nextInt();
+            if (broj >= 10 && broj <= 99) {
+                zbrojDvoznamenkastih += broj;
+            }
+        }
+
+        System.out.println("Zbroj dvoznamenkastih brojeva: " + zbrojDvoznamenkastih);
+
+        scanner.close();
+    }
+}
+
+
+
+
+public class Zadatak4 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Unesite duljinu prve stranice pravokutnika:");
+        double stranica1 = scanner.nextDouble();
+
+        System.out.println("Unesite duljinu druge stranice pravokutnika:");
+        double stranica2 = scanner.nextDouble();
+
+        double povrsina = stranica1 * stranica2;
+        double opseg = 2 * (stranica1 + stranica2);
+
+        System.out.println("Površina pravokutnika: " + povrsina);
+        System.out.println("Opseg pravokutnika: " + opseg);
+
+        scanner.close();
+    }
+}
