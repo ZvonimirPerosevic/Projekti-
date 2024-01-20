@@ -1,0 +1,255 @@
+import java.util.Scanner;
+
+public class IstostranicniTrokut {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Unos stranice a
+        System.out.print("Učitaj stranicu a trokuta: ");
+        double a = scanner.nextDouble();
+
+        // Računanje opsega trokuta
+        double opseg = 3 * a;
+
+        // Računanje površine trokuta
+        double povrsina = (Math.sqrt(3) / 4) * Math.pow(a, 2);
+
+        // Ispis rezultata
+        System.out.println("Opseg je: " + opseg);
+        System.out.printf("Površina trokuta je: %.2f%n", povrsina);
+    }
+}
+
+
+import java.util.Scanner;
+
+public class IzrazVrijednost {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            // Unos brojeva x, y, a, b
+            System.out.print("Unesite broj x: ");
+            double x = scanner.nextDouble();
+
+            System.out.print("Unesite broj y: ");
+            double y = scanner.nextDouble();
+
+            System.out.print("Unesite broj a: ");
+            double a = scanner.nextDouble();
+
+            System.out.print("Unesite broj b: ");
+            double b = scanner.nextDouble();
+
+            // Izračun izraza Ix-yl xy
+            double rezultat = Math.abs(x - y) * (x * y);
+
+            // Ispis rezultata
+            System.out.println("Vrijednost izraza Ix-yl xy je: " + rezultat);
+        } catch (Exception e) {
+            System.out.println("Unesite ispravne brojeve.");
+        } finally {
+            scanner.close();
+        }
+    }
+}
+
+
+import java.util.Scanner;
+
+public class IzrazVrijednost {
+    public static void main(String[] args) {
+        // Koristimo try-with-resources za automatsko zatvaranje Scanner objekta
+        try (Scanner scanner = new Scanner(System.in)) {
+            // Unos brojeva x, y, a, b
+            System.out.print("Unesite broj x: ");
+            double x = scanner.nextDouble();
+
+            System.out.print("Unesite broj y: ");
+            double y = scanner.nextDouble();
+
+            System.out.print("Unesite broj a: ");
+            double a = scanner.nextDouble();
+
+            System.out.print("Unesite broj b: ");
+            double b = scanner.nextDouble();
+
+            // Izračun izraza (a*b) / (x*y - b)
+            double rezultat = (a * b) / (x * y - b);
+
+            // Ispis rezultata
+            System.out.println("Vrijednost izraza (ab) / (xy - b) je: " + rezultat);
+        } catch (Exception e) {
+            System.out.println("Dogodila se greška. Provjerite unos.");
+        }
+    }
+}
+
+
+import java.util.Scanner;
+
+public class ProvjeraBroja {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Unos cijelog broja
+        System.out.print("Unesite cijeli broj: ");
+        int broj = scanner.nextInt();
+
+        // Provjera je li broj pozitivan, negativan ili nula
+        if (broj > 0) {
+            System.out.println("Uneseni broj je pozitivan.");
+        } else {
+            if (broj < 0) {
+                System.out.println("Uneseni broj je negativan.");
+            } else {
+                System.out.println("Uneseni broj je nula.");
+            }
+        }
+
+        // Zatvaranje Scanner-a
+        scanner.close();
+    }
+}
+
+
+
+import java.util.Scanner;
+
+public class NajveciBroj {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Unos tri broja
+        System.out.print("Unesite prvi broj: ");
+        double prviBroj = scanner.nextDouble();
+
+        System.out.print("Unesite drugi broj: ");
+        double drugiBroj = scanner.nextDouble();
+
+        System.out.print("Unesite treći broj: ");
+        double treciBroj = scanner.nextDouble();
+
+        // Pronalaženje najvećeg broja korištenjem if naredbi
+        double najveciBroj;
+
+        if (prviBroj >= drugiBroj && prviBroj >= treciBroj) {
+            najveciBroj = prviBroj;
+        } else if (drugiBroj >= prviBroj && drugiBroj >= treciBroj) {
+            najveciBroj = drugiBroj;
+        } else {
+            najveciBroj = treciBroj;
+        }
+
+        // Ispis rezultata
+        System.out.println("Najveći broj je: " + najveciBroj);
+
+        // Zatvaranje Scanner-a
+        scanner.close();
+    }
+}
+
+import java.util.Scanner;
+
+public class MinSrednjiMax {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Unos tri broja
+        System.out.print("Unesite prvi broj: ");
+        double prviBroj = scanner.nextDouble();
+
+        System.out.print("Unesite drugi broj: ");
+        double drugiBroj = scanner.nextDouble();
+
+        System.out.print("Unesite treći broj: ");
+        double treciBroj = scanner.nextDouble();
+
+        // Pronalaženje najmanjeg, srednjeg i najvećeg broja
+        double najmanji, srednji, najveci;
+
+        if (prviBroj <= drugiBroj && prviBroj <= treciBroj) {
+            najmanji = prviBroj;
+            if (drugiBroj <= treciBroj) {
+                srednji = drugiBroj;
+                najveci = treciBroj;
+            } else {
+                srednji = treciBroj;
+                najveci = drugiBroj;
+            }
+        } else if (drugiBroj <= prviBroj && drugiBroj <= treciBroj) {
+            najmanji = drugiBroj;
+            if (prviBroj <= treciBroj) {
+                srednji = prviBroj;
+                najveci = treciBroj;
+            } else {
+                srednji = treciBroj;
+                najveci = prviBroj;
+            }
+        } else {
+            najmanji = treciBroj;
+            if (prviBroj <= drugiBroj) {
+                srednji = prviBroj;
+                najveci = drugiBroj;
+            } else {
+                srednji = drugiBroj;
+                najveci = prviBroj;
+            }
+        }
+
+        // Ispis rezultata
+        System.out.println("Najmanji broj je: " + najmanji);
+        System.out.println("Srednji broj je: " + srednji);
+        System.out.println("Najveći broj je: " + najveci);
+
+        // Zatvaranje Scanner-a
+        scanner.close();
+    }
+}
+
+
+import java.util.Scanner;
+
+public class SljedbenikPrethodnik {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Unos cijelog broja
+        System.out.print("Unesite cijeli broj: ");
+        int broj = scanner.nextInt();
+
+        // Provjera i ispis sljedbenika ili prethodnika
+        if (broj < 0) {
+            // Broj je manji od 0, ispis sljedbenika
+            System.out.println("Sljedbenik unesenog broja je: " + (broj + 1));
+        } else {
+            // Broj nije manji od 0, ispis prethodnika
+            System.out.println("Prethodnik unesenog broja je: " + (broj - 1));
+        }
+
+        // Zatvaranje Scanner-a
+        scanner.close();
+    }
+}
+
+import java.util.Scanner;
+
+public class DjeljivostS3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Unos cijelog broja
+        System.out.print("Unesite cijeli broj: ");
+        int broj = scanner.nextInt();
+
+        // Provjera je li broj djeljiv s 3
+        if (broj % 3 == 0) {
+            System.out.println("Uneseni broj je djeljiv s 3.");
+        } else {
+            System.out.println("Uneseni broj nije djeljiv s 3.");
+        }
+
+        // Zatvaranje Scanner-a
+        scanner.close();
+    }
+}
